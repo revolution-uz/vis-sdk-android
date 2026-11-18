@@ -18,7 +18,7 @@ The SDK is published on Maven Central, which every Android project already
 lists in `settings.gradle.kts`. In your app module:
 
 ```kotlin
-implementation("uz.vis:vis-sdk-android:1.0.0")
+implementation("uz.vis:vis-sdk-android:1.0.1")
 ```
 
 ## Backend handoff
@@ -116,9 +116,9 @@ verify.launch(
 | Reason | Tell the user |
 |---|---|
 | `LIVENESS_FAILED` | The live check did not pass (head turn, video, more than one face). Try again in good light, alone, facing the camera. |
-| `FACE_MISMATCH` | The face did not match the document (in a selfie-only session: the person whose details were typed). |
+| `FACE_MISMATCH` | The face did not match the face on the document. |
 | `INVALID_DOCUMENT` | The document was not accepted: unreadable, expired, not a valid card, or not the person's card. |
-| `DOCUMENT_DATA_MISMATCH` | The typed document number or birth date does not match the card. Type it again. |
+| `DOCUMENT_DATA_MISMATCH` | The typed document number or birth date does not match the document. Type it again. |
 | `UNKNOWN` | Generic failure. Categories added later reach older SDKs as `UNKNOWN`, so always handle it. |
 
 The partner webhook carries the same category; decide policy there, not on the device.
