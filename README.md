@@ -7,7 +7,7 @@ exposes scores: the server decides, the SDK reports.
 
 ## Requirements
 
-- Android `minSdk 26` (Android 8.0); built against `compileSdk 35`
+- Android `minSdk 24` (Android 7.0); built against `compileSdk 35`
 - Kotlin (the SDK's screens use Jetpack Compose internally; your app does not need Compose)
 - An attempt handoff minted by **your backend** (see below)
 - A front camera (optional in the manifest; devices without one finish with `DeviceUnsupported`)
@@ -18,7 +18,7 @@ The SDK is published on Maven Central, which every Android project already
 lists in `settings.gradle.kts`. In your app module:
 
 ```kotlin
-implementation("uz.vis:vis-sdk-android:1.0.1")
+implementation("uz.vis:vis-sdk-android:1.0.2")
 ```
 
 ## Backend handoff

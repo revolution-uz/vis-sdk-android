@@ -2,6 +2,10 @@
 
 All notable changes to the Vis Android SDK. This project follows Semantic Versioning.
 
+## [1.0.2] — 2026-11-19
+
+- `minSdk` lowered from 26 to 24: the SDK now runs on Android 7.0 and 7.1. Partner apps do not need core library desugaring.
+
 ## [1.0.1] — 2026-11-18
 
 - Documentation wording.
