@@ -2,6 +2,13 @@
 
 All notable changes to the Vis Android SDK. This project follows Semantic Versioning.
 
+## [1.0.3] — 2026-11-20
+
+- Selfie framing: the recorded clip is what the screen shows, centred on the circle. Before, on devices whose camera stream is not exactly 1280×720 (most front cameras deliver 4:3), the clip was read from one edge of the frame, so part of the picture on one side was cut off and the face sat off-centre in the clip. The camera preview and the analysis stream are now bound to the screen's viewport (one field of view on every device), both ask for 16:9, and the clip window is a 9:16 crop around the drawn circle, scaled to 720×1280.
+- The positioning check uses the circle actually drawn on the screen: recording starts only when the face is inside it, so the face is centred in the clip. The face-size minimum (224 px) is measured in the clip.
+- Fewer "frame gap exceeds 250 ms" failures on slow phones: the video encoder starts while the user is positioning instead of on the first recorded frame; the camera keeps at least 15 frames per second in dim light; the per-frame video copy and the face-detection copy no longer make per-pixel buffer calls or allocate per frame; the camera thread runs above normal priority. A clip that still has a frame gap is recorded again (shown as "Find better lighting") instead of ending the verification.
+- Smaller selfie clips: the encoder uses constant bit rate (2 Mbit/s) where the device supports it; the default variable mode overshot to 3–5 MB per clip.
+
 ## [1.0.2] — 2026-11-19
 
 - `minSdk` lowered from 26 to 24: the SDK now runs on Android 7.0 and 7.1. Partner apps do not need core library desugaring.
