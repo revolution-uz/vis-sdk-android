@@ -2,6 +2,10 @@
 
 All notable changes to the Vis Android SDK. This project follows Semantic Versioning.
 
+## [1.0.4] — 2026-11-27
+
+- Improved session cancellation. No API changes.
+
 ## [1.0.3] — 2026-11-20
 
 - Selfie framing: the recorded clip is what the screen shows, centred on the circle. Before, on devices whose camera stream is not exactly 1280×720 (most front cameras deliver 4:3), the clip was read from one edge of the frame, so part of the picture on one side was cut off and the face sat off-centre in the clip. The camera preview and the analysis stream are now bound to the screen's viewport (one field of view on every device), both ask for 16:9, and the clip window is a 9:16 crop around the drawn circle, scaled to 720×1280.

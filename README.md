@@ -18,7 +18,7 @@ The SDK is published on Maven Central, which every Android project already
 lists in `settings.gradle.kts`. In your app module:
 
 ```kotlin
-implementation("uz.vis:vis-sdk-android:1.0.3")
+implementation("uz.vis:vis-sdk-android:1.0.4")
 ```
 
 ## Backend handoff
